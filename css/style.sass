@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Quicksand:wght@500;700&family=Roboto:wght@300&family=Merriweather:wght@700&display=swap')
+
+
+$font-stack: Helvetica, sans-serif
+$primary_color: #053863
+$secondary_color: #F3AC2E
+$secondary_color_hover: #f5b441
+$alternative_color: #F29AB0
+$alternative_color_hover: #f5a8bb
+
+
+body
+  font-family: 'Open Sans', sans-serif
+  font-weight: 400
+  font-size: 16px
+  line-height: 1.5
+
+  font-synthesis: none
+  -moz-font-feature-settings: 'kern'
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+*
+  box-sizing: border-box
+
+h1, h2, header .nav, .action_btn
+  font-family: 'Quicksand', sans-serif
+  font-weight: 700
+
+footer .nav
+  font-family: 'Roboto', sans-serif
+  font-weight: 300
+
+main
+  background-color: $primary_color
+  overflow-x: hidden
+
+
+.white_section
+  background-color: #fff
+
+h1, h2, h3, h4, h5
+  color: $secondary_color
+
+p, ul, li, a
+  color: #fff
+
+.white_section
+  h1, h2, h3, h4, h5, h6
+    color: $primary_color
+  p, ul, li, a
+    color: #333
+
+h1
+  font-size: 4rem
+
+h2
+  font-size: 3rem
+
+h3
+  font-size: 1.5rem
+
+h4
+  font-size: 18px
+  font-weight: 600
+
+h5
+  font-weight: 400
+
+p
+  margin: 0 0 1rem
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+
+a
+  text-decoration: none
+  cursor: pointer
+  &:hover
+    color: $secondary_color
+
+button
+  border: 0
+
+a, button, input[type="submit"]
+  transition: all .2s ease
+
+input, textarea
+  outline: none
+  resize: none
+
+img
+  width: 100%
+  max-width: 100%
+  max-height: 100%
+
+ul.nav
+  list-style: none
+  padding-left: 0
+  margin: 0
+  display: flex
+
+
+.container
+  margin: auto
+  padding: 0 15px
+  width: 100%
+  max-width: 1224px
+
+section
+  .container
+    display: flex
+    gap: 30px
+    > h2
+      width: 100%
+    .col
+      width: 50%
+
+.img_wrap
+  line-height: 0
+
+.overlay
+  display: block
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+  background: rgb(0 0 0 / 75%)
+  position: fixed
+  z-index: -1
+  opacity: 0
+  transition: opacity .2s ease
+
+.toggle_nav
+  cursor: pointer
+  background: transparent
+  appearance: none
+  border: none
+  height: 14px
+  width: 21px
+  position: absolute
+  left: 30px
+  padding: 0
+  &:before, &:after, span
+    display: block
+    height: 3px
+    width: 100%
+    background-color: $secondary_color
+    position: absolute
+    transition: all .2s ease
+  &:before, &:after
+    content: ''
+  &:before
+    top: 0
+  &:after
+    bottom: 0
+  span
+    top: 50%
+    transform: translateY(-50%)
+  &:hover
+    &:before
+      top: -1px
+    &:after
+      bottom: -1px
+
+
+.header
+  height: 120px
+  padding: 25px 0
+  .container
+    display: flex
+    align-items: center
+    gap: 55px
+  .nav_item
+    padding-right: 40px
+    font-size: 18px
+  .info
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    &_item
+      text-align: center
+      &_img
+        height: 48px
+        margin-bottom: 8px
+      a
+        font-size: 14px
+        font-weight: 600
+      p
+        margin: 0
+        line-height: 1
+
+  .logo
+    max-height: 40px
+    max-width: 257px
+    height: 100%
+    a
+      display: block
+      line-height: 0
+      height: 100%
+      width: 100%
+  .nav_wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    transition: transform .2s ease
+    .socials
+      display: flex
+      align-items: center
+      a
+        display: inline-block
+        height: 24px
+        width: 24px
+        margin-right: 16px
+
+
+.hero_section
+  position: relative
+  padding-top: 75px
+  .container
+    gap: 80px
+
+    height: calc(100vh - 120px)
+    min-height: 672px
+
+    .col:not(.img_wrap) > *:not(:last-child)
+      margin: 0 auto 40px
+      &:not(.logo_wrap)
+        max-width: 417px
+        text-align: center
+
+  .img_wrap img
+    position: absolute
+    top: 0
+    bottom: 0
+    object-fit: cover
+    height: 100%
+    width: calc(50% - 80px/2)
+
+  h1
+    font-family: inherit
+    font-size: 32px
+    font-weight: 400
+    color: #fff
+
+  ul.subtitles
+    padding: 0
+    list-style: none
+    display: flex
+    flex-flow: wrap
+    justify-content: center
+    gap: 16px 36px
+    font-size: 14px
+    overflow: hidden
+    li
+      position: relative
+      &:not(:last-child):after
+        content: '•'
+        position: absolute
+        right: -20px
+    &:first-line
+      background-color: red
+
+  .action_btn
+    margin: auto
+    display: flex
+    align-items: center
+    width: 200px
+    height: 200px
+    color: $primary_color
+    background-color: $alternative_color
+    text-align: center
+    text-transform: uppercase
+    border-radius: 50%
+    font-family: 'Quicksand', sans-serif
+    font-weight: 500
+    font-size: 24px
+    &:hover
+      background-color: $alternative_color_hover
+
+
+.services_section
+  padding: 96px 0
+  .container
+    gap: 126px
+    .col:first-child
+      min-width: max-content
+    .col
+      width: auto
+  .services
+    display: grid
+    gap: 40px 90px
+    grid-template-columns: repeat(4, 1fr)
+    text-align: center
+    margin-top: 80px
+    .service_item
+      flex: 1 1 120px
+      flex-basis: 120px
+    .service_icon
+      width: 112px
+      height: 112px
+      margin: 0 auto 8px
+    p
+      margin: 0
+      font-weight: 600
+
+
+.brands_section
+  padding: 120px 0
+  .container
+    gap: 64px
+    .col
+      &:first-child
+        width: 38%
+      &:last-child
+        width: 62%
+
+  .brands
+    display: grid
+    gap: 52px 48px
+    grid-template-columns: repeat(5, 1fr)
+
+
+.about_section
+  padding: 96px 0
+  .container
+    display: grid
+    gap: 24px
+    grid-template-columns: repeat(3, 1fr)
+  h2
+    grid-column: 1 / -1
+    margin-bottom: 18px
+
+  .article
+    &_img
+      margin-bottom: 32px
+      line-height: 0
+    h3
+      margin-bottom: 24px
+    p
+      overflow: hidden
+      text-overflow: ellipsis
+      display: -webkit-box
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+    &_description
+      .more
+        cursor: pointer
+        border: 0
+        padding: 0
+        background: none
+        color: $secondary_color
+        font-size: 14px
+        &:after
+          content: ''
+          display: inline-block
+          height: 10px
+          width: 10px
+          background: url(../images/arrow-down.svg) center no-repeat
+          background-size: contain
+          margin-left: 5px
+        &:hover
+          color: $secondary_color_hover
+
+
+footer
+  position: relative
+  .container
+    display: flex
+    gap: 128px
+    .col
+      width: 50%
+  .img_wrap
+    img
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      width: calc(50% - 128px/2)
+      height: 100%
+      object-fit: cover
+  h2
+    margin-bottom: 80px
+  .contacts
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    margin-bottom: 64px
+    .contact_item
+      text-align: center
+    .contact_item_img
+      height: 48px
+      width: 48px
+      margin: 0 auto 8px
+  form + .socials
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 44px
+  .socials
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      height: 24px
+      width: 24px
+      margin-right: 16px
+
+  .form_wrap
+    position: relative
+    margin-bottom: 96px
+  form
+    input
+      height: 44px
+    input, textarea
+      width: 100%
+      padding: 14px
+      margin-bottom: 28px
+      background-color: transparent
+      border: 1px solid $secondary_color
+      color: #fff
+      &::placeholder
+        color: #fff
+    textarea
+      max-height: 144px
+      height: 100%
+    input[type="submit" ], .submit
+      background-color: $secondary_color
+      line-height: 15px
+      padding: 14px 16px
+      width: auto
+      color: $primary_color
+      cursor: pointer
+      &:hover
+        background-color: $secondary_color_hover
+    .submit:after
+      content: ''
+      display: inline-block
+      background: url(../images/arrow-right.svg) center no-repeat
+      height: 10px
+      width: 10px
+      background-size: contain
+      margin-left: 33px
+    .input_wrap:last-child
+      text-align: right
+      input
+        margin-bottom: 0
+
+  .bottom_bar
+    padding: 25px 0 96px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .logo
+      height: 40px
+    ul.nav
+      display: flex
+      font-weight: 300
+      font-size: 14px
+      li:not(:last-child)
+        margin-right: 24px
+
+
+.section_page
+  padding: 64px 0 72px
+  .container
+    max-width: 1016px
+  h1
+    font-family: 'Merriweather', serif
+  ul
+    padding-left: 0
+    margin-bottom: 32px
+    list-style: none
+    li
+      margin-bottom: 16px
+      &:before
+        content: "•"
+        padding: 0 10px
+
+
+.modal_wrap
+  position: fixed
+  max-width: 880px
+  padding: 32px
+  background-color: #ffffff
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+  z-index: 2
+
+@media screen and (min-width: 1024px)
+  .header
+    .nav_wrap
+      .socials, .contacts
+        display: none
+    .toggle_nav
+      display: none
+
+  .home header .logo
+    display: none
+
+
+@media screen and (max-width: 1024px)
+  h1
+    font-size: 3rem
+  .header
+    height: 64px
+    padding: 18px 0
+    position: relative
+    z-index: 2
+
+    .container
+      justify-content: center
+
+    .logo
+      max-height: 28px
+      a
+        height: 28px
+
+    .nav_wrap
+      position: absolute
+      top: 64px
+      left: 0
+      bottom: 0
+      max-width: 228px
+      width: 100%
+      height: calc(100vh - 64px)
+      background-color: $primary_color
+      padding: 32px 16px
+      flex-direction: column
+      align-items: start
+      transform: translateX(-100%)
+      ul.nav
+        flex-direction: column
+        li
+          margin-bottom: 18px
+          padding-right: 0
+      .info
+        display: none
+      .contacts
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        gap: 24px
+        margin-bottom: 24px
+        .contact_item
+          display: flex
+          gap: 16px
+          align-items: center
+          text-align: left
+          font-size: 14px
+        .contact_item_img
+          margin: 0
+          height: 32px
+          width: 32px
+        p
+          margin: 0
+          width: calc(100% - 48px)
+
+  body.nav_open
+    overflow: hidden
+    .header .nav_wrap
+      transform: translateX(-0)
+    .overlay
+      z-index: 1
+      top: 64px
+      opacity: 1
+
+
+@media screen and (max-width: 920px)
+  .hero_section .container, footer .container
+    gap: 40px
+    .img_wrap img
+      width: calc(50% - 20px)
+  .services_section .container
+    gap: 80px
+
+  footer .contacts
+    font-size: 14px
+  .brands_section .brands
+    grid-template-columns: repeat(4, 1fr)
+  .services_section .services
+    grid-template-columns: repeat(2, 1fr)
+
+
+@media screen and (max-width: 768px)
+  h1
+    font-size: 2.2rem
+  h2
+    margin-bottom: 2rem
+    font-size: 36px
+  h3
+    line-height: 1.4
+  h5
+    margin: 32px 0 24px
+  p
+    margin: 0 0 .8rem
+
+  .section_page ul li
+    overflow-wrap: anywhere
+
+  section, footer
+    .container
+      flex-direction: column
+      .col
+        width: 100%
+    .img_wrap img
+      max-width: -moz-available
+      max-width: -webkit-fill-available
+      max-width: fill-available
+
+  .hero_section, .brands_section, footer
+    .container
+      height: auto
+      .img_wrap img
+        position: inherit
+        width: auto
+        margin-left: -15px
+        margin-right: -15px
+  .hero_section
+    padding: 0
+    .container
+      gap: 32px
+      flex-direction: column-reverse
+    .action_btn
+      width: 127px
+      height: 127px
+      font-size: 1rem
+    .logo_wrap
+      display: none
+    h1
+      font-size: 1.5rem
+
+
+  .services_section
+    padding: 72px 0
+    .container
+      gap: 0
+    .services
+      margin-top: 44px
+      gap: 16px
+      grid-template-columns: repeat(2, 1fr)
+
+
+  .brands_section
+    padding: 0 0 46px
+    .container
+      gap: 32px
+      .col:first-child, .col:last-child
+        width: 100%
+    h2
+      font-size: 1.5rem
+    .brands
+      grid-template-columns: repeat(2, 1fr)
+      gap: 39px 55px
+
+  .about_section
+    padding: 48px 0
+    .container
+      grid-template-columns: repeat(1, 1fr)
+      gap: 32px
+    .article
+      .article_img
+        margin-bottom: 24px
+      h3
+        margin-bottom: 12px
+
+  footer
+    .container
+      gap: 32px
+      .bottom_bar
+        flex-direction: column-reverse
+        gap: 32px
+        padding-bottom: 48px
+        ul.nav
+          flex-direction: column
+          align-items: center
+          li
+            margin-right: 0
+            margin-bottom: 18px
+      .contacts_wrap
+        h2
+          margin-bottom: 24px
+        .contacts
+          grid-template-columns: repeat(1, 1fr)
+          gap: 24px
+          margin-bottom: 24px
+          .contact_item
+            display: flex
+            gap: 16px
+            align-items: center
+            text-align: left
+          .contact_item_img
+            margin: 0
+          p
+            margin: 0
+        .form_wrap
+          margin-bottom: 25px
