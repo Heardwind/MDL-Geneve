@@ -84,6 +84,7 @@ button
 
 a, button, input[type="submit"]
   transition: all .2s ease
+  cursor: pointer
 
 input, textarea
   outline: none
@@ -93,6 +94,9 @@ img
   width: 100%
   max-width: 100%
   max-height: 100%
+
+video
+  max-width: 100%
 
 ul.nav
   list-style: none
@@ -479,13 +483,68 @@ footer
 
 .modal_wrap
   position: fixed
-  max-width: 880px
-  padding: 32px
-  background-color: #ffffff
+  max-width: 908px
+  width: 100%
   left: 50%
   top: 50%
   transform: translate(-50%,-50%)
-  z-index: 2
+  opacity: 0
+  padding: 14px
+  transition: opacity .2s ease
+  z-index: -1
+  .modal
+    position: relative
+    padding: 32px
+    background-color: #ffffff
+  .close_modal
+    position: absolute
+    height: 18px
+    width: 18px
+    padding: 0
+    top: 32px
+    right: 32px
+    background: url('../images/close.svg') center no-repeat
+    background-size: contain
+  .modal_title
+    font-family: 'Quicksand', sans-serif
+    font-weight: 500
+    color: $primary_color
+    text-transform: uppercase
+  .modal_conent
+    display: flex
+    gap: 24px
+    font-size: 16px
+    h5
+      font-size: 16px
+    p, ul
+      color: $primary_color
+    video
+      width: 100%
+    .col:first-child
+      width: calc(100% * 2 / 3)
+    .col:last-child
+      width: calc(100% / 3)
+    .facebook_btn
+      background-color: $primary_color
+      color: #ffffff
+      height: 32px
+      width: 100%
+      display: inline-block
+      text-align: center
+      padding: 4px 20px
+      &:hover
+        background-color: $secondary_color_hover
+
+body.modal_open
+  overflow: hidden
+  .overlay
+    z-index: 1
+    opacity: 1
+  .modal_wrap
+    display: block
+    opacity: 1
+    z-index: 2
+
 
 @media screen and (min-width: 1024px)
   .header
@@ -563,7 +622,6 @@ footer
       z-index: 1
       top: 64px
       opacity: 1
-
 
 @media screen and (max-width: 920px)
   .hero_section .container, footer .container
@@ -694,3 +752,11 @@ footer
             margin: 0
         .form_wrap
           margin-bottom: 25px
+
+  .modal_wrap .modal .modal_conent
+    flex-direction: column
+    gap: 16px
+    .col
+      width: 100%
+    h5
+      margin: 0 0 12px
